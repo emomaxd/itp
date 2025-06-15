@@ -1,377 +1,143 @@
-/* ===== GENEL AYARLAR ===== */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  scroll-behavior: smooth;
+/* Genel Stiller */
+.nav-btn {
+  @apply text-white font-semibold hover:text-pink-200 transition-all duration-300 cursor-pointer;
 }
 
-* {
-  box-sizing: border-box;
+.category-card {
+  @apply bg-white bg-opacity-20 backdrop-blur-sm p-6 rounded-lg text-center 
+         cursor-pointer hover:bg-opacity-30 hover:scale-105 
+         transition-all duration-300 shadow-lg;
 }
 
-/* ===== ARKAPLAN VE BLUR ===== */
-.bg-blur {
-  background-image: url('blur-background.jpg');
-  background-position: center;
-  background-size: cover;
-  filter: blur(10px);
+.category-card:hover {
+  transform: translateY(-5px) scale(1.02);
 }
 
-/* Eğer blur-background.jpg yoksa fallback pattern */
-.bg-blur::before {
+.example-section {
+  @apply hidden opacity-0 transform translate-y-4;
+  transition: all 0.3s ease-in-out;
+}
+
+.example-section.active {
+  @apply block opacity-100 transform translate-y-0;
+}
+
+.example-grid {
+  @apply grid gap-4;
+}
+
+.example-card {
+  @apply bg-white bg-opacity-10 backdrop-blur-sm rounded-lg overflow-hidden 
+         cursor-pointer hover:bg-opacity-20 hover:scale-105 
+         transition-all duration-300 shadow-lg;
+}
+
+.example-card:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.showcase-item {
+  @apply bg-white bg-opacity-10 backdrop-blur-sm rounded-lg overflow-hidden 
+         hover:bg-opacity-20 hover:scale-105 transition-all duration-300 shadow-lg;
+}
+
+/* Modal Stilleri */
+.modal {
+  @apply hidden fixed inset-0 bg-black bg-opacity-50 z-50 overflow-y-auto;
+}
+
+.modal.active {
+  @apply flex items-center justify-center p-4;
+}
+
+.modal-content {
+  @apply bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg 
+         max-w-4xl w-full max-h-screen overflow-y-auto text-white;
+}
+
+.modal-header {
+  @apply flex justify-between items-center p-6 border-b border-white border-opacity-20;
+}
+
+.modal-body {
+  @apply p-6;
+}
+
+.close {
+  @apply text-3xl font-bold cursor-pointer hover:text-pink-200 transition-colors;
+}
+
+.close:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Ayarları */
+@media (max-width: 768px) {
+  .category-card {
+    @apply p-4;
+  }
+  
+  .example-card {
+    @apply text-sm;
+  }
+  
+  .modal-content {
+    @apply m-2 max-h-[90vh];
+  }
+  
+  .modal-body {
+    @apply grid-cols-1;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Animasyonlar */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.example-section.active {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Hover Efektleri */
+.category-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="white" opacity="0.1"/><circle cx="60" cy="40" r="1" fill="white" opacity="0.08"/><circle cx="80" cy="70" r="1" fill="white" opacity="0.12"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  opacity: 0.3;
-  z-index: -1;
-}
-
-/* ===== NAVİGASYON BUTONLARI ===== */
-.nav-btn {
-  display: inline-block;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(15px);
-  padding: 12px 20px;
-  border-radius: 25px;
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  font-size: 0.95rem;
-}
-
-.nav-btn:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* ===== KATEGORİ KARTLARI ===== */
-.category-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
-  padding: 40px 20px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  color: #fff;
-  text-decoration: none;
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
-  height: 250px;
-  cursor: pointer;
-  will-change: transform;
-  position: relative;
-  overflow: hidden;
-}
-
-.category-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
 }
 
 .category-card:hover::before {
-  left: 100%;
-}
-
-.category-card:hover {
-  transform: translateY(-10px);
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.category-card h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.3rem;
-}
-
-.category-card p {
-  margin: 0;
-  font-size: 0.9rem;
-  opacity: 0.9;
-  font-weight: normal;
-}
-
-/* ===== ÖRNEKLER CONTAINER ===== */
-.example-grid {
-  display: none;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.5s ease;
-  margin-top: 30px;
-}
-
-.example-grid.active {
-  display: grid;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.example-card {
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  will-change: transform;
-}
-
-.example-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-.example-card .p-4 {
-  padding: 16px;
-}
-
-.example-card h4 {
-  margin: 0 0 8px 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.example-card p {
-  margin: 0;
-  font-size: 0.85rem;
-  opacity: 0.9;
-  color: #fff;
-}
-
-/* ===== SHOWCASE KARTLARI ===== */
-.showcase-item {
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.showcase-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.showcase-item .p-6 {
-  padding: 24px;
-}
-
-.showcase-item h3 {
-  margin: 0 0 12px 0;
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #fff;
-}
-
-.showcase-item p {
-  margin: 0;
-  opacity: 0.9;
-  color: #fff;
-  line-height: 1.5;
-}
-
-/* ===== LOGO ANIMASYONU ===== */
-.pulse-animation {
-  animation: pulse 3s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
-}
-
-/* ===== GRID SİSTEMİ ===== */
-.grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-}
-
-/* ===== FOOTER ===== */
-footer {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: #fff;
-}
-
-/* İletişim butonu özel stili */
-footer a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(15px);
-  padding: 16px 24px;
-  border-radius: 30px;
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
-}
-
-footer a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* ===== RESPONSIVE TASARIM ===== */
-
-/* Tablet ve küçük ekranlar */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .category-card {
-    height: 200px;
-    padding: 30px 15px;
-    font-size: 1.3rem;
-  }
-  
-  .category-card h3 {
-    font-size: 1.1rem;
-  }
-  
-  .nav-btn {
-    padding: 10px 16px;
-    font-size: 0.9rem;
-  }
-  
-  .example-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-  
-  .example-card .h-48 {
-    height: 160px;
-  }
-  
-  .showcase-item .h-64 {
-    height: 200px;
-  }
-}
-
-/* Çok küçük ekranlar */
-@media (max-width: 480px) {
-  .category-card {
-    height: 180px;
-    padding: 25px 10px;
-    font-size: 1.2rem;
-  }
-  
-  .example-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .nav-btn {
-    padding: 8px 12px;
-    font-size: 0.85rem;
-  }
-}
-
-/* Büyük ekranlar - 3 kolon */
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .example-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Çok büyük ekranlar - 4 kolon */
-@media (min-width: 1280px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .example-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* ===== PERFORMANS İYİLEŞTİRMELER ===== */
-
-/* GPU hızlandırması için */
-.category-card,
-.example-card,
-.showcase-item,
-.nav-btn {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* Smooth scrolling için */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-/* Animasyonları devre dışı bırakma seçeneği */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  .pulse-animation {
-    animation: none;
-  }
-}
-
-/* ===== ACCESSIBILITY İYİLEŞTİRMELERİ ===== */
-
-/* Focus durumları */
-.nav-btn:focus,
-.category-card:focus,
-.example-card:focus,
-footer a:focus {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-}
-
-/* Yüksek kontrast modu desteği */
-@media (prefers-contrast: high) {
-  .category-card,
-  .example-card,
-  .showcase-item,
-  .nav-btn,
-  footer a {
-    border: 2px solid #fff;
-  }
+  transform: translateX(100%);
 }

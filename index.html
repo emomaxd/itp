@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>İlayda Tül Perde Evi</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <<style src="style.css"></style>
+  <style src="style.css"></style>
 </head>
 <body class="bg-gradient-to-r from-pink-300 via-purple-400 to-indigo-500 font-sans text-white">
   <!-- Hero Section -->
@@ -15,17 +15,17 @@
     <!-- Navigation -->
     <nav class="relative z-20 flex justify-center items-center pt-6 px-4">
       <div class="flex gap-4 flex-wrap justify-center">
-        <button onclick="scrollToSection('hizmetler')" class="nav-btn">Çalıştığımız Alanlar</button>
+        <button onclick="scrollToSection('hizmetler')" class="nav-btn">Çalışma Alanlarımız</button>
+        <div> | </div>
         <button onclick="scrollToSection('calismalari')" class="nav-btn">Çalışmalarımız</button>
+        <div> | </div>
         <button onclick="scrollToSection('iletisim')" class="nav-btn">İletişim</button>
       </div>
     </nav>
     
     <!-- Hero Header Section -->
     <header class="relative z-10 flex flex-col items-center justify-center h-full text-center p-8 pt-16">
-      <div class="w-40 h-40 mb-6 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center pulse-animation">
-        <span class="text-4xl font-bold">İTP</span>
-      </div>
+      <img src="itp-logo-w.png" class="w-80 h-80" ></img>
       <h1 class="text-5xl font-extrabold text-white mb-4 drop-shadow-lg">İlayda Tül Perde Evi</h1>
       <p class="text-xl font-semibold text-white mb-8">Evleriniz için zarif, şık ve modern perde çözümleri</p>
       <button onclick="scrollToSection('hizmetler')" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg">
@@ -35,192 +35,135 @@
   </div>
 
   <!-- Çalıştığımız Alanlar -->
-  <section id="hizmetler" class="relative py-16 bg-gradient-to-b from-transparent to-black to-opacity-20">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-12 text-white drop-shadow-lg">Çalıştığımız Alanlar</h2>
-      <div class="grid grid-cols-2 gap-6 md:gap-8 px-4 md:px-8 lg:grid-cols-3 xl:grid-cols-4 mb-12">
-        <div class="category-card" onclick="showExamples('tul')">
-          <h3 class="text-xl font-bold mb-2">Tül Perdeler</h3>
-          <p class="text-sm opacity-90">Zarif ve şeffaf</p>
-        </div>
-        <div class="category-card" onclick="showExamples('stor')">
-          <h3 class="text-xl font-bold mb-2">Stor Perdeler</h3>
-          <p class="text-sm opacity-90">Modern ve pratik</p>
-        </div>
-        <div class="category-card" onclick="showExamples('fon')">
-          <h3 class="text-xl font-bold mb-2">Fon Perdeler</h3>
-          <p class="text-sm opacity-90">Kalın ve sıcak</p>
-        </div>
-        <div class="category-card" onclick="showExamples('klasik')">
-          <h3 class="text-xl font-bold mb-2">Klasik Perdeler</h3>
-          <p class="text-sm opacity-90">Geleneksel ve şık</p>
-        </div>
+<section id="hizmetler" class="relative py-16 bg-gradient-to-b from-transparent to-black to-opacity-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12 text-white drop-shadow-lg">Çalışma Alanlarımız</h2>
+
+    <!-- Kategori Butonları -->
+    <div class="grid grid-cols-2 gap-6 md:gap-8 px-4 md:px-8 lg:grid-cols-3 xl:grid-cols-6 mb-12">
+      <div class="category-card" onclick="showExamples('tul')">
+        <h3 class="text-xl font-bold mb-2">Tül</h3>
+        <p class="text-sm opacity-90">[T]</p>
       </div>
-      
-      <!-- Örnekler Bölümü -->
-      <div id="examples-container" class="px-4">
-        <!-- Tül Perdeler -->
-        <div id="tul-examples" class="example-grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
-              <span class="text-gray-600 font-semibold">Şeffaf Tül</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Modern Şeffaf Tül</h4>
-              <p class="text-sm opacity-90">Doğal ışık geçirgen</p>
-            </div>
-          </div>
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-cream-100 to-cream-300 flex items-center justify-center">
-              <span class="text-cream-800 font-semibold">Desenli Tül</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Desenli Tül Perde</h4>
-              <p class="text-sm opacity-90">Zarif desenler</p>
-            </div>
-          </div>
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-              <span class="text-blue-800 font-semibold">Renkli Tül</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Renkli Tül Seçenekleri</h4>
-              <p class="text-sm opacity-90">Çeşitli renk seçenekleri</p>
-            </div>
-          </div>
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-pink-100 to-pink-200 flex items-center justify-center">
-              <span class="text-pink-800 font-semibold">Premium Tül</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Premium Tül Perdeler</h4>
-              <p class="text-sm opacity-90">Yüksek kalite</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Stor Perdeler -->
-        <div id="stor-examples" class="example-grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center">
-              <span class="text-white font-semibold">Zebra Stor</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Zebra Stor Perdeler</h4>
-              <p class="text-sm opacity-90">Işık kontrolü</p>
-            </div>
-          </div>
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-brown-200 to-brown-400 flex items-center justify-center">
-              <span class="text-white font-semibold">Ahşap Stor</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Ahşap Stor Perdeler</h4>
-              <p class="text-sm opacity-90">Doğal görünüm</p>
-            </div>
-          </div>
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-blue-300 to-blue-500 flex items-center justify-center">
-              <span class="text-white font-semibold">Renkli Stor</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Renkli Stor Seçenekleri</h4>
-              <p class="text-sm opacity-90">Modern renkler</p>
-            </div>
-          </div>
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-green-300 to-green-500 flex items-center justify-center">
-              <span class="text-white font-semibold">Outdoor Stor</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Outdoor Stor Perdeler</h4>
-              <p class="text-sm opacity-90">Hava koşullarına dayanıklı</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Fon Perdeler -->
-        <div id="fon-examples" class="example-grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
-              <span class="text-white font-semibold">Kadife Fon</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Kadife Fon Perdeler</h4>
-              <p class="text-sm opacity-90">Lüks ve sıcak</p>
-            </div>
-          </div>
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-navy-400 to-navy-600 flex items-center justify-center">
-              <span class="text-white font-semibold">Kalın Fon</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Kalın Fon Perdeler</h4>
-              <p class="text-sm opacity-90">Işık geçirmez</p>
-            </div>
-          </div>
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
-              <span class="text-white font-semibold">Jakarlı Fon</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Jakarlı Fon Perdeler</h4>
-              <p class="text-sm opacity-90">Desenli ve şık</p>
-            </div>
-          </div>
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-              <span class="text-white font-semibold">Modern Fon</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Modern Fon Perdeler</h4>
-              <p class="text-sm opacity-90">Çağdaş tasarım</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Klasik Perdeler -->
-        <div id="klasik-examples" class="example-grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-gold-300 to-gold-500 flex items-center justify-center">
-              <span class="text-white font-semibold">Altın Klasik</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Altın Rengi Klasik</h4>
-              <p class="text-sm opacity-90">Geleneksel zarafet</p>
-            </div>
-          </div>
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
-              <span class="text-white font-semibold">Desenli Klasik</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Desenli Klasik Perdeler</h4>
-              <p class="text-sm opacity-90">Geleneksel desenler</p>
-            </div>
-          </div>
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center">
-              <span class="text-white font-semibold">İpek Klasik</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">İpek Klasik Perdeler</h4>
-              <p class="text-sm opacity-90">Premium kumaş</p>
-            </div>
-          </div>
-          <div class="example-card">
-            <div class="h-48 bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center">
-              <span class="text-white font-semibold">Vintage Klasik</span>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Vintage Klasik Perdeler</h4>
-              <p class="text-sm opacity-90">Nostaljik şıklık</p>
-            </div>
-          </div>
-        </div>
+      <div class="category-card" onclick="showExamples('perde')">
+        <h3 class="text-xl font-bold mb-2">Perde</h3>
+        <p class="text-sm opacity-90">[P]</p>
+      </div>
+      <div class="category-card" onclick="showExamples('stor')">
+        <h3 class="text-xl font-bold mb-2">Stor</h3>
+        <p class="text-sm opacity-90">[S]</p>
+      </div>
+      <div class="category-card" onclick="showExamples('zebra')">
+        <h3 class="text-xl font-bold mb-2">Zebra</h3>
+        <p class="text-sm opacity-90">[Z]</p>
+      </div>
+      <div class="category-card" onclick="showExamples('jaluzi')">
+        <h3 class="text-xl font-bold mb-2">Jaluzi</h3>
+        <p class="text-sm opacity-90">[J]</p>
+      </div>
+      <div class="category-card" onclick="showExamples('rustik')">
+        <h3 class="text-xl font-bold mb-2">Rustik</h3>
+        <p class="text-sm opacity-90">[R]</p>
       </div>
     </div>
-  </section>
+
+    <!-- Alt Alta Kartlar -->
+    <div id="examples-container" class="flex flex-col gap-6 px-4">
+
+      <!-- Kart Şablonu (6 adet) -->
+      <div id="tul-examples" class="example-card">
+        <div class="flex h-48">
+          <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
+            <span class="text-gray-600 font-semibold">Tül</span>
+          </div>
+          <div class="w-1/4">
+            <img src="public/images/tul.jpg" alt="Tül" class="h-full w-full object-cover" />
+          </div>
+        </div>
+        <div class="p-4">
+          <h4 class="font-semibold">Tüller</h4>
+          <p class="text-sm opacity-90">[AÇIKLAMA]</p>
+        </div>
+      </div>
+
+      <div id="perde-examples" class="example-card">
+        <div class="flex h-48">
+          <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
+            <span class="text-gray-600 font-semibold">Perde</span>
+          </div>
+          <div class="w-1/4">
+            <img src="public/images/perde.jpeg" alt="Perde" class="h-full w-full object-cover" />
+          </div>
+        </div>
+        <div class="p-4">
+          <h4 class="font-semibold">Perdeler</h4>
+          <p class="text-sm opacity-90">[AÇIKLAMA]</p>
+        </div>
+      </div>
+
+      <div id="stor-examples" class="example-card">
+        <div class="flex h-48">
+          <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
+            <span class="text-gray-600 font-semibold">Stor</span>
+          </div>
+          <div class="w-1/4">
+            <img src="img2.jpeg" alt="Stor" class="h-full w-full object-cover" />
+          </div>
+        </div>
+        <div class="p-4">
+          <h4 class="font-semibold">Stor Perdeler</h4>
+          <p class="text-sm opacity-90">[AÇIKLAMA]</p>
+        </div>
+      </div>
+
+      <div id="zebra-examples" class="example-card">
+        <div class="flex h-48">
+          <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
+            <span class="text-gray-600 font-semibold">Zebra</span>
+          </div>
+          <div class="w-1/4">
+            <img src="img3.jpeg" alt="Zebra" class="h-full w-full object-cover" />
+          </div>
+        </div>
+        <div class="p-4">
+          <h4 class="font-semibold">Zebra Perdeler</h4>
+          <p class="text-sm opacity-90">[AÇIKLAMA]</p>
+        </div>
+      </div>
+
+      <div id="jaluzi-examples" class="example-card">
+        <div class="flex h-48">
+          <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
+            <span class="text-gray-600 font-semibold">Jaluzi</span>
+          </div>
+          <div class="w-1/4">
+            <img src="img4.jpeg" alt="Jaluzi" class="h-full w-full object-cover" />
+          </div>
+        </div>
+        <div class="p-4">
+          <h4 class="font-semibold">Jaluzi Perdeler</h4>
+          <p class="text-sm opacity-90">[AÇIKLAMA]</p>
+        </div>
+      </div>
+
+      <div id="rustik-examples" class="example-card">
+        <div class="flex h-48">
+          <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
+            <span class="text-gray-600 font-semibold">Rustik</span>
+          </div>
+          <div class="w-1/4">
+            <img src="img5.jpeg" alt="Rustik" class="h-full w-full object-cover" />
+          </div>
+        </div>
+        <div class="p-4">
+          <h4 class="font-semibold">Rustik Perdeler</h4>
+          <p class="text-sm opacity-90">[AÇIKLAMA]</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- Çalışmalarımız Showcase -->
   <section id="calismalari" class="py-16 bg-gradient-to-b from-transparent to-black to-opacity-30">
@@ -267,66 +210,12 @@
           📞 05XX XXX XX XX
         </a>
         <p class="text-lg opacity-90">Ücretsiz keşif ve ölçüm hizmeti</p>
-        <p class="text-sm opacity-75">Adapazarı, Sakarya</p>
+        <p class="text-sm opacity-75">Kaynarca, Sakarya</p>
       </div>
     </div>
   </footer>
 
-  <script>
-    // Performans odaklı JavaScript
-    let currentActiveExample = null;
-
-    function scrollToSection(sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    }
-
-    function showExamples(category) {
-      // Mevcut aktif örneği gizle
-      if (currentActiveExample) {
-        currentActiveExample.classList.remove('active');
-      }
-      
-      // Yeni kategori örneklerini göster
-      const newExamples = document.getElementById(category + '-examples');
-      if (newExamples) {
-        newExamples.classList.add('active');
-        currentActiveExample = newExamples;
-        
-        // Smooth scroll to examples
-        setTimeout(() => {
-          newExamples.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'nearest'
-          });
-        }, 100);
-      }
-    }
-
-    // Sayfa yüklendiğinde ilk kategoriyi göster
-    document.addEventListener('DOMContentLoaded', function() {
-      // Performans için initial load'da hiçbir örnek gösterilmiyor
-      // Kullanıcı tıkladığında açılacak
-    });
-
-    // Touch/hover optimizasyonları
-    const categoryCards = document.querySelectorAll('.category-card');
-    categoryCards.forEach(card => {
-      card.addEventListener('touchstart', function() {
-        this.style.transform = 'translateY(-5px)';
-      }, { passive: true });
-      
-      card.addEventListener('touchend', function() {
-        setTimeout(() => {
-          this.style.transform = 'translateY(0)';
-        }, 150);
-      }, { passive: true });
-    });
+  <script src="script.js">
   </script>
 </body>
 </html>
