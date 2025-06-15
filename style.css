@@ -1,143 +1,130 @@
-/* Genel Stiller */
-.nav-btn {
-  @apply text-white font-semibold hover:text-pink-200 transition-all duration-300 cursor-pointer;
-}
+    /* Wind-like hover animations */
+    .wind-hover {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .wind-hover::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        rgba(255, 255, 255, 0.4), 
+        rgba(255, 255, 255, 0.2), 
+        transparent
+      );
+      transition: left 0.6s ease;
+      z-index: 10;
+    }
+    
+    .wind-hover:hover::before {
+      left: 100%;
+    }
+    
+    .wind-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+    }
 
-.category-card {
-  @apply bg-white bg-opacity-20 backdrop-blur-sm p-6 rounded-lg text-center 
-         cursor-pointer hover:bg-opacity-30 hover:scale-105 
-         transition-all duration-300 shadow-lg;
-}
+    /* Gentle glow animation */
+    .glow-hover {
+      transition: all 0.4s ease;
+      position: relative;
+    }
+    
+    .glow-hover::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+    
+    .glow-hover:hover::after {
+      opacity: 1;
+    }
 
-.category-card:hover {
-  transform: translateY(-5px) scale(1.02);
-}
+    /* Ripple effect for buttons */
+    .ripple-hover {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .ripple-hover::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transition: width 0.6s, height 0.6s;
+      transform: translate(-50%, -50%);
+    }
+    
+    .ripple-hover:hover::before {
+      width: 300px;
+      height: 300px;
+    }
 
-.example-section {
-  @apply hidden opacity-0 transform translate-y-4;
-  transition: all 0.3s ease-in-out;
-}
+    /* Card styles */
+    .category-card {
+      @apply bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 text-center cursor-pointer border border-white border-opacity-20;
+    }
+    
+    .example-card {
+      @apply bg-white bg-opacity-10 backdrop-blur-sm rounded-lg overflow-hidden border border-white border-opacity-20 cursor-pointer;
+    }
+    
+    .showcase-item {
+      @apply bg-white bg-opacity-10 backdrop-blur-sm rounded-lg overflow-hidden border border-white border-opacity-20;
+    }
 
-.example-section.active {
-  @apply block opacity-100 transform translate-y-0;
-}
+    .nav-btn {
+      @apply text-white font-semibold hover:text-opacity-80 cursor-pointer px-3 py-1 rounded;
+    }
 
-.example-grid {
-  @apply grid gap-4;
-}
+    /* Expanded card styles */
+    .expanded-content {
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+    }
+    
+    .expanded-content.active {
+      max-height: 500px;
+      padding: 2rem;
+    }
 
-.example-card {
-  @apply bg-white bg-opacity-10 backdrop-blur-sm rounded-lg overflow-hidden 
-         cursor-pointer hover:bg-opacity-20 hover:scale-105 
-         transition-all duration-300 shadow-lg;
-}
+    /* Option buttons */
+    .option-btn {
+      @apply bg-purple-600 text-white px-4 py-2 rounded-lg mr-2 mb-2 cursor-pointer transition-all duration-300;
+    }
+    
+    .option-btn:hover {
+      @apply bg-purple-700 transform translate-y(-1px);
+    }
+    
+    .option-btn.selected {
+      @apply bg-purple-800 ring-2 ring-purple-300;
+    }
 
-.example-card:hover {
-  transform: translateY(-3px) scale(1.02);
-}
-
-.showcase-item {
-  @apply bg-white bg-opacity-10 backdrop-blur-sm rounded-lg overflow-hidden 
-         hover:bg-opacity-20 hover:scale-105 transition-all duration-300 shadow-lg;
-}
-
-/* Modal Stilleri */
-.modal {
-  @apply hidden fixed inset-0 bg-black bg-opacity-50 z-50 overflow-y-auto;
-}
-
-.modal.active {
-  @apply flex items-center justify-center p-4;
-}
-
-.modal-content {
-  @apply bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg 
-         max-w-4xl w-full max-h-screen overflow-y-auto text-white;
-}
-
-.modal-header {
-  @apply flex justify-between items-center p-6 border-b border-white border-opacity-20;
-}
-
-.modal-body {
-  @apply p-6;
-}
-
-.close {
-  @apply text-3xl font-bold cursor-pointer hover:text-pink-200 transition-colors;
-}
-
-.close:hover {
-  transform: scale(1.1);
-}
-
-/* Responsive Ayarları */
-@media (max-width: 768px) {
-  .category-card {
-    @apply p-4;
-  }
-  
-  .example-card {
-    @apply text-sm;
-  }
-  
-  .modal-content {
-    @apply m-2 max-h-[90vh];
-  }
-  
-  .modal-body {
-    @apply grid-cols-1;
-  }
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
-}
-
-/* Animasyonlar */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.example-section.active {
-  animation: fadeInUp 0.5s ease-out;
-}
-
-/* Hover Efektleri */
-.category-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.6s;
-}
-
-.category-card:hover::before {
-  transform: translateX(100%);
-}
+    /* Contact form styles */
+    .contact-input {
+      @apply w-full p-3 rounded-lg border border-purple-300 mb-4 focus:outline-none focus:ring-2 focus:ring-purple-500;
+    }

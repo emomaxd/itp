@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>İlayda Tül Perde Evi</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style src="style.css"></style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gradient-to-r from-pink-300 via-purple-400 to-indigo-500 font-sans text-white">
   <!-- Hero Section -->
@@ -15,20 +15,20 @@
     <!-- Navigation -->
     <nav class="relative z-20 flex justify-center items-center pt-6 px-4">
       <div class="flex gap-4 flex-wrap justify-center">
-        <button onclick="scrollToSection('hizmetler')" class="nav-btn">Çalışma Alanlarımız</button>
+        <button onclick="scrollToSection('hizmetler')" class="nav-btn wind-hover">Çalışma Alanlarımız</button>
         <div> | </div>
-        <button onclick="scrollToSection('calismalari')" class="nav-btn">Çalışmalarımız</button>
+        <button onclick="scrollToSection('calismalari')" class="nav-btn wind-hover">Çalışmalarımız</button>
         <div> | </div>
-        <button onclick="scrollToSection('iletisim')" class="nav-btn">İletişim</button>
+        <button onclick="scrollToSection('iletisim')" class="nav-btn wind-hover">İletişim</button>
       </div>
     </nav>
     
     <!-- Hero Header Section -->
     <header class="relative z-10 flex flex-col items-center justify-center h-full text-center p-8 pt-16">
-      <img src="itp-logo-w.png" class="w-80 h-80" ></img>
+      <img src="itp-logo-w.png" class="w-80 h-80 glow-hover" alt="İlayda Tül Perde Evi Logo">
       <h1 class="text-5xl font-extrabold text-white mb-4 drop-shadow-lg">İlayda Tül Perde Evi</h1>
       <p class="text-xl font-semibold text-white mb-8">Evleriniz için zarif, şık ve modern perde çözümleri</p>
-      <button onclick="scrollToSection('hizmetler')" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg">
+      <button onclick="scrollToSection('hizmetler')" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg ripple-hover wind-hover">
         Çalışmalarımızı İnceleyin
       </button>
     </header>
@@ -41,123 +41,265 @@
 
     <!-- Kategori Butonları -->
     <div class="grid grid-cols-2 gap-6 md:gap-8 px-4 md:px-8 lg:grid-cols-3 xl:grid-cols-6 mb-12">
-      <div class="category-card" onclick="showExamples('tul')">
+      <div class="category-card wind-hover glow-hover" onclick="showExamples('tul')">
         <h3 class="text-xl font-bold mb-2">Tül</h3>
-        <p class="text-sm opacity-90">[T]</p>
+        <p class="text-sm opacity-90">Şeffaf ve zarif</p>
       </div>
-      <div class="category-card" onclick="showExamples('perde')">
+      <div class="category-card wind-hover glow-hover" onclick="showExamples('perde')">
         <h3 class="text-xl font-bold mb-2">Perde</h3>
-        <p class="text-sm opacity-90">[P]</p>
+        <p class="text-sm opacity-90">Klasik ve modern</p>
       </div>
-      <div class="category-card" onclick="showExamples('stor')">
+      <div class="category-card wind-hover glow-hover" onclick="showExamples('stor')">
         <h3 class="text-xl font-bold mb-2">Stor</h3>
-        <p class="text-sm opacity-90">[S]</p>
+        <p class="text-sm opacity-90">Pratik çözümler</p>
       </div>
-      <div class="category-card" onclick="showExamples('zebra')">
+      <div class="category-card wind-hover glow-hover" onclick="showExamples('zebra')">
         <h3 class="text-xl font-bold mb-2">Zebra</h3>
-        <p class="text-sm opacity-90">[Z]</p>
+        <p class="text-sm opacity-90">İkili sistem</p>
       </div>
-      <div class="category-card" onclick="showExamples('jaluzi')">
+      <div class="category-card wind-hover glow-hover" onclick="showExamples('jaluzi')">
         <h3 class="text-xl font-bold mb-2">Jaluzi</h3>
-        <p class="text-sm opacity-90">[J]</p>
+        <p class="text-sm opacity-90">Işık kontrolü</p>
       </div>
-      <div class="category-card" onclick="showExamples('rustik')">
+      <div class="category-card wind-hover glow-hover" onclick="showExamples('rustik')">
         <h3 class="text-xl font-bold mb-2">Rustik</h3>
-        <p class="text-sm opacity-90">[R]</p>
+        <p class="text-sm opacity-90">Doğal görünüm</p>
       </div>
     </div>
 
     <!-- Alt Alta Kartlar -->
     <div id="examples-container" class="flex flex-col gap-6 px-4">
 
-      <!-- Kart Şablonu (6 adet) -->
-      <div id="tul-examples" class="example-card">
+      <!-- Tül Card -->
+      <div id="tul-examples" class="example-card wind-hover" onclick="toggleExpand('tul')">
         <div class="flex h-48">
           <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
-            <span class="text-gray-600 font-semibold">Tül</span>
+            <span class="text-gray-600 font-semibold text-2xl">Tül Perdeler</span>
           </div>
           <div class="w-1/4">
             <img src="public/images/tul.jpg" alt="Tül" class="h-full w-full object-cover" />
           </div>
         </div>
         <div class="p-4">
-          <h4 class="font-semibold">Tüller</h4>
-          <p class="text-sm opacity-90">[AÇIKLAMA]</p>
+          <h4 class="font-semibold text-lg">Tüller</h4>
+          <p class="text-sm opacity-90">Şeffaf ve zarif görünüm için ideal çözüm</p>
+        </div>
+        <div id="tul-expanded" class="expanded-content">
+          <h3 class="text-xl font-bold mb-4">Tül Perde Seçenekleri</h3>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Kumaş Tipi:</h4>
+            <div class="flex flex-wrap">
+              <button class="option-btn" data-option="organze">Organze</button>
+              <button class="option-btn" data-option="jakarlı">Jakarlı</button>
+              <button class="option-btn" data-option="düz">Düz Tül</button>
+              <button class="option-btn" data-option="desenli">Desenli</button>
+            </div>
+          </div>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Renk:</h4>
+            <div class="flex flex-wrap">
+              <button class="option-btn" data-option="beyaz">Beyaz</button>
+              <button class="option-btn" data-option="krem">Krem</button>
+              <button class="option-btn" data-option="gri">Gri</button>
+              <button class="option-btn" data-option="bej">Bej</button>
+            </div>
+          </div>
+          <button onclick="requestQuote('tul')" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all">
+            Fiyat Teklifi Al
+          </button>
         </div>
       </div>
 
-      <div id="perde-examples" class="example-card">
+      <!-- Perde Card -->
+      <div id="perde-examples" class="example-card wind-hover" onclick="toggleExpand('perde')">
         <div class="flex h-48">
           <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
-            <span class="text-gray-600 font-semibold">Perde</span>
+            <span class="text-gray-600 font-semibold text-2xl">Klasik Perdeler</span>
           </div>
           <div class="w-1/4">
             <img src="public/images/perde.jpeg" alt="Perde" class="h-full w-full object-cover" />
           </div>
         </div>
         <div class="p-4">
-          <h4 class="font-semibold">Perdeler</h4>
-          <p class="text-sm opacity-90">[AÇIKLAMA]</p>
+          <h4 class="font-semibold text-lg">Perdeler</h4>
+          <p class="text-sm opacity-90">Klasik ve modern tasarımlarla tam karartma</p>
+        </div>
+        <div id="perde-expanded" class="expanded-content">
+          <h3 class="text-xl font-bold mb-4">Perde Seçenekleri</h3>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Kumaş Tipi:</h4>
+            <div class="flex flex-wrap">
+              <button class="option-btn" data-option="blackout">Blackout</button>
+              <button class="option-btn" data-option="dim-out">Dim Out</button>
+              <button class="option-btn" data-option="şantuk">Şantuk</button>
+              <button class="option-btn" data-option="kadife">Kadife</button>
+            </div>
+          </div>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Desen:</h4>
+            <div class="flex flex-wrap">
+              <button class="option-btn" data-option="düz">Düz</button>
+              <button class="option-btn" data-option="çizgili">Çizgili</button>
+              <button class="option-btn" data-option="çiçekli">Çiçekli</button>
+              <button class="option-btn" data-option="geometrik">Geometrik</button>
+            </div>
+          </div>
+          <button onclick="requestQuote('perde')" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all">
+            Fiyat Teklifi Al
+          </button>
         </div>
       </div>
 
-      <div id="stor-examples" class="example-card">
+      <!-- Stor Card -->
+      <div id="stor-examples" class="example-card wind-hover" onclick="toggleExpand('stor')">
         <div class="flex h-48">
           <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
-            <span class="text-gray-600 font-semibold">Stor</span>
+            <span class="text-gray-600 font-semibold text-2xl">Stor Perdeler</span>
           </div>
           <div class="w-1/4">
             <img src="img2.jpeg" alt="Stor" class="h-full w-full object-cover" />
           </div>
         </div>
         <div class="p-4">
-          <h4 class="font-semibold">Stor Perdeler</h4>
-          <p class="text-sm opacity-90">[AÇIKLAMA]</p>
+          <h4 class="font-semibold text-lg">Stor Perdeler</h4>
+          <p class="text-sm opacity-90">Modern ve pratik çözümler</p>
+        </div>
+        <div id="stor-expanded" class="expanded-content">
+          <h3 class="text-xl font-bold mb-4">Stor Perde Seçenekleri</h3>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Sistem:</h4>
+            <div class="flex flex-wrap">
+              <button class="option-btn" data-option="motorlu">Motorlu</button>
+              <button class="option-btn" data-option="elle-kumanda">Elle Kumanda</button>
+              <button class="option-btn" data-option="zincirli">Zincirli</button>
+            </div>
+          </div>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Kumaş:</h4>
+            <div class="flex flex-wrap">
+              <button class="option-btn" data-option="opak">Opak</button>
+              <button class="option-btn" data-option="yarı-geçirgen">Yarı Geçirgen</button>
+              <button class="option-btn" data-option="geçirgen">Geçirgen</button>
+            </div>
+          </div>
+          <button onclick="requestQuote('stor')" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all">
+            Fiyat Teklifi Al
+          </button>
         </div>
       </div>
 
-      <div id="zebra-examples" class="example-card">
+      <!-- Zebra Card -->
+      <div id="zebra-examples" class="example-card wind-hover" onclick="toggleExpand('zebra')">
         <div class="flex h-48">
           <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
-            <span class="text-gray-600 font-semibold">Zebra</span>
+            <span class="text-gray-600 font-semibold text-2xl">Zebra Perdeler</span>
           </div>
           <div class="w-1/4">
             <img src="img3.jpeg" alt="Zebra" class="h-full w-full object-cover" />
           </div>
         </div>
         <div class="p-4">
-          <h4 class="font-semibold">Zebra Perdeler</h4>
-          <p class="text-sm opacity-90">[AÇIKLAMA]</p>
+          <h4 class="font-semibold text-lg">Zebra Perdeler</h4>
+          <p class="text-sm opacity-90">İkili şerit sistemi ile ayarlanabilir ışık</p>
+        </div>
+        <div id="zebra-expanded" class="expanded-content">
+          <h3 class="text-xl font-bold mb-4">Zebra Perde Seçenekleri</h3>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Şerit Genişliği:</h4>
+            <div class="flex flex-wrap">
+              <button class="option-btn" data-option="5cm">5 cm</button>
+              <button class="option-btn" data-option="7cm">7 cm</button>
+              <button class="option-btn" data-option="10cm">10 cm</button>
+            </div>
+          </div>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Kumanda:</h4>
+            <div class="flex flex-wrap">
+              <button class="option-btn" data-option="zincir">Zincir</button>
+              <button class="option-btn" data-option="motorlu">Motorlu</button>
+              <button class="option-btn" data-option="uzaktan">Uzaktan Kumanda</button>
+            </div>
+          </div>
+          <button onclick="requestQuote('zebra')" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all">
+            Fiyat Teklifi Al
+          </button>
         </div>
       </div>
 
-      <div id="jaluzi-examples" class="example-card">
+      <!-- Jaluzi Card -->
+      <div id="jaluzi-examples" class="example-card wind-hover" onclick="toggleExpand('jaluzi')">
         <div class="flex h-48">
           <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
-            <span class="text-gray-600 font-semibold">Jaluzi</span>
+            <span class="text-gray-600 font-semibold text-2xl">Jaluzi Perdeler</span>
           </div>
           <div class="w-1/4">
             <img src="img4.jpeg" alt="Jaluzi" class="h-full w-full object-cover" />
           </div>
         </div>
         <div class="p-4">
-          <h4 class="font-semibold">Jaluzi Perdeler</h4>
-          <p class="text-sm opacity-90">[AÇIKLAMA]</p>
+          <h4 class="font-semibold text-lg">Jaluzi Perdeler</h4>
+          <p class="text-sm opacity-90">Tam ışık kontrolü ve modern görünüm</p>
+        </div>
+        <div id="jaluzi-expanded" class="expanded-content">
+          <h3 class="text-xl font-bold mb-4">Jaluzi Seçenekleri</h3>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Malzeme:</h4>
+            <div class="flex flex-wrap">
+              <button class="option-btn" data-option="ahşap">Ahşap</button>
+              <button class="option-btn" data-option="alüminyum">Alüminyum</button>
+              <button class="option-btn" data-option="pvc">PVC</button>
+            </div>
+          </div>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Lamel Genişliği:</h4>
+            <div class="flex flex-wrap">
+              <button class="option-btn" data-option="25mm">25mm</button>
+              <button class="option-btn" data-option="35mm">35mm</button>
+              <button class="option-btn" data-option="50mm">50mm</button>
+            </div>
+          </div>
+          <button onclick="requestQuote('jaluzi')" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all">
+            Fiyat Teklifi Al
+          </button>
         </div>
       </div>
 
-      <div id="rustik-examples" class="example-card">
+      <!-- Rustik Card -->
+      <div id="rustik-examples" class="example-card wind-hover" onclick="toggleExpand('rustik')">
         <div class="flex h-48">
           <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
-            <span class="text-gray-600 font-semibold">Rustik</span>
+            <span class="text-gray-600 font-semibold text-2xl">Rustik Perdeler</span>
           </div>
           <div class="w-1/4">
             <img src="img5.jpeg" alt="Rustik" class="h-full w-full object-cover" />
           </div>
         </div>
         <div class="p-4">
-          <h4 class="font-semibold">Rustik Perdeler</h4>
-          <p class="text-sm opacity-90">[AÇIKLAMA]</p>
+          <h4 class="font-semibold text-lg">Rustik Perdeler</h4>
+          <p class="text-sm opacity-90">Doğal dokular ve geleneksel stil</p>
+        </div>
+        <div id="rustik-expanded" class="expanded-content">
+          <h3 class="text-xl font-bold mb-4">Rustik Perde Seçenekleri</h3>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Malzeme:</h4>
+            <div class="flex flex-wrap">
+              <button class="option-btn" data-option="keten">Keten</button>
+              <button class="option-btn" data-option="jüt">Jüt</button>
+              <button class="option-btn" data-option="bambu">Bambu</button>
+              <button class="option-btn" data-option="hasır">Hasır</button>
+            </div>
+          </div>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Stil:</h4>
+            <div class="flex flex-wrap">
+              <button class="option-btn" data-option="roman">Roman</button>
+              <button class="option-btn" data-option="panel">Panel</button>
+              <button class="option-btn" data-option="rulo">Rulo</button>
+            </div>
+          </div>
+          <button onclick="requestQuote('rustik')" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all">
+            Fiyat Teklifi Al
+          </button>
         </div>
       </div>
 
@@ -168,9 +310,9 @@
   <!-- Çalışmalarımız Showcase -->
   <section id="calismalari" class="py-16 bg-gradient-to-b from-transparent to-black to-opacity-30">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-12 text-white drop-shadow-lg">Çalışmalarımız</h2>
+      <h2 class="text-4xl font-bold text-center mb-12 text-white drop-shadow-lg">Yaptığımız İşler</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="showcase-item">
+        <div class="showcase-item wind-hover glow-hover">
           <div class="h-64 bg-gradient-to-br from-pink-200 to-pink-400 flex items-center justify-center">
             <span class="text-pink-800 font-bold text-xl">Salon Çalışması</span>
           </div>
@@ -179,7 +321,7 @@
             <p class="opacity-90">Zarif tül perdeler ile modern salon tasarımı</p>
           </div>
         </div>
-        <div class="showcase-item">
+        <div class="showcase-item wind-hover glow-hover">
           <div class="h-64 bg-gradient-to-br from-blue-200 to-blue-400 flex items-center justify-center">
             <span class="text-blue-800 font-bold text-xl">Yatak Odası</span>
           </div>
@@ -188,7 +330,7 @@
             <p class="opacity-90">Şık fon perdeler ile yatak odası dekorasyonu</p>
           </div>
         </div>
-        <div class="showcase-item">
+        <div class="showcase-item wind-hover glow-hover">
           <div class="h-64 bg-gradient-to-br from-green-200 to-green-400 flex items-center justify-center">
             <span class="text-green-800 font-bold text-xl">Ofis Projesi</span>
           </div>
@@ -206,16 +348,36 @@
     <div class="container mx-auto text-center px-4">
       <h3 class="text-2xl font-bold mb-6">İletişim</h3>
       <div class="space-y-4">
-        <a href="tel:+905XXXXXXXX" class="inline-block bg-white bg-opacity-20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold hover:bg-opacity-30 transition-all duration-300 shadow-lg">
+        <a href="tel:+905XXXXXXXX" class="inline-block bg-white bg-opacity-20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold hover:bg-opacity-30 transition-all duration-300 shadow-lg wind-hover">
           📞 05XX XXX XX XX
         </a>
         <p class="text-lg opacity-90">Ücretsiz keşif ve ölçüm hizmeti</p>
         <p class="text-sm opacity-75">Kaynarca, Sakarya</p>
       </div>
+
+      <!-- Quote Request Modal Trigger -->
+      <div id="quote-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+          <h3 class="text-2xl font-bold mb-4 text-gray-800">Fiyat Teklifi</h3>
+          <form id="quote-form">
+            <input type="text" placeholder="Adınız Soyadınız" class="contact-input" required>
+            <input type="tel" placeholder="Telefon Numaranız" class="contact-input" required>
+            <input type="text" placeholder="Adresiniz" class="contact-input" required>
+            <textarea placeholder="Ek Notlarınız" class="contact-input h-20 resize-none"></textarea>
+            <div class="flex gap-4">
+              <button type="submit" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all flex-1">
+                Teklif Al
+              </button>
+              <button type="button" onclick="closeQuoteModal()" class="bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-500 transition-all">
+                İptal
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js">
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
