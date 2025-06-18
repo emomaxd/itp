@@ -8,11 +8,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gradient-to-r from-pink-300 via-purple-400 to-indigo-500 font-sans text-white">
-  <!-- Hero Section -->
   <div class="relative min-h-screen overflow-auto">
     <div class="absolute inset-0 bg-blur bg-cover bg-center opacity-40 z-0"></div>
     
-    <!-- Navigation -->
     <nav class="relative z-20 flex justify-center items-center pt-6 px-4">
       <div class="flex gap-4 flex-wrap justify-center">
         <button onclick="scrollToSection('hizmetler')" class="nav-btn wind-hover">Çalışma Alanlarımız</button>
@@ -23,7 +21,6 @@
       </div>
     </nav>
     
-    <!-- Hero Header Section -->
     <header class="relative z-10 flex flex-col items-center justify-center h-full text-center p-8 pt-16">
       <img src="itp-logo-w.png" class="w-80 h-80 glow-hover" alt="İlayda Tül Perde Evi Logo">
       <h1 class="text-5xl font-extrabold text-white mb-4 drop-shadow-lg">İlayda Tül Perde Evi</h1>
@@ -34,12 +31,10 @@
     </header>
   </div>
 
-  <!-- Çalıştığımız Alanlar -->
 <section id="hizmetler" class="relative py-16 bg-gradient-to-b from-transparent to-black to-opacity-20">
   <div class="container mx-auto px-4">
     <h2 class="text-4xl font-bold text-center mb-12 text-white drop-shadow-lg">Çalışma Alanlarımız</h2>
 
-    <!-- Kategori Butonları -->
     <div class="grid grid-cols-2 gap-6 md:gap-8 px-4 md:px-8 lg:grid-cols-3 xl:grid-cols-6 mb-12">
       <div class="category-card wind-hover glow-hover" onclick="showExamples('tul')">
         <h3 class="text-xl font-bold mb-2">Tül</h3>
@@ -67,10 +62,8 @@
       </div>
     </div>
 
-    <!-- Alt Alta Kartlar -->
     <div id="examples-container" class="flex flex-col gap-6 px-4">
 
-      <!-- Tül Card -->
       <div id="tul-examples" class="example-card wind-hover" onclick="toggleExpand('tul')">
         <div class="flex h-48">
           <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
@@ -86,7 +79,7 @@
         </div>
         <div id="tul-expanded" class="expanded-content">
           <h3 class="text-xl font-bold mb-4">Tül Perde Seçenekleri</h3>
-          <div class="mb-6">
+          <div class="mb-6" data-selection-group="tul-tip">
             <h4 class="font-semibold mb-2">Kumaş Tipi:</h4>
             <div class="flex flex-wrap">
               <button class="option-btn" data-option="organze">Organze</button>
@@ -95,7 +88,7 @@
               <button class="option-btn" data-option="desenli">Desenli</button>
             </div>
           </div>
-          <div class="mb-6">
+          <div class="mb-6" data-selection-group="tul-renk">
             <h4 class="font-semibold mb-2">Renk:</h4>
             <div class="flex flex-wrap">
               <button class="option-btn" data-option="beyaz">Beyaz</button>
@@ -110,7 +103,6 @@
         </div>
       </div>
 
-      <!-- Perde Card -->
       <div id="perde-examples" class="example-card wind-hover" onclick="toggleExpand('perde')">
         <div class="flex h-48">
           <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
@@ -150,7 +142,6 @@
         </div>
       </div>
 
-      <!-- Stor Card -->
       <div id="stor-examples" class="example-card wind-hover" onclick="toggleExpand('stor')">
         <div class="flex h-48">
           <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
@@ -188,7 +179,6 @@
         </div>
       </div>
 
-      <!-- Zebra Card -->
       <div id="zebra-examples" class="example-card wind-hover" onclick="toggleExpand('zebra')">
         <div class="flex h-48">
           <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
@@ -226,7 +216,6 @@
         </div>
       </div>
 
-      <!-- Jaluzi Card -->
       <div id="jaluzi-examples" class="example-card wind-hover" onclick="toggleExpand('jaluzi')">
         <div class="flex h-48">
           <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
@@ -264,7 +253,6 @@
         </div>
       </div>
 
-      <!-- Rustik Card -->
       <div id="rustik-examples" class="example-card wind-hover" onclick="toggleExpand('rustik')">
         <div class="flex h-48">
           <div class="w-3/4 bg-gradient-to-br from-white to-gray-200 flex items-center justify-center">
@@ -307,7 +295,6 @@
   </div>
 </section>
 
-  <!-- Çalışmalarımız Showcase -->
   <section id="calismalari" class="py-16 bg-gradient-to-b from-transparent to-black to-opacity-30">
     <div class="container mx-auto px-4">
       <h2 class="text-4xl font-bold text-center mb-12 text-white drop-shadow-lg">Yaptığımız İşler</h2>
@@ -343,38 +330,37 @@
     </div>
   </section>
 
-  <!-- İletişim -->
   <footer id="iletisim" class="relative py-12 bg-gradient-to-b from-transparent to-black to-opacity-50">
     <div class="container mx-auto text-center px-4">
-      <h3 class="text-2xl font-bold mb-6">İletişim</h3>
+<h3 class="text-2xl font-bold mb-6">İletişim</h3>
       <div class="space-y-4">
-        <a href="tel:+905XXXXXXXX" class="inline-block bg-white bg-opacity-20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold hover:bg-opacity-30 transition-all duration-300 shadow-lg wind-hover">
+        <a id="footer-phone" href="tel:+905XXXXXXXX" class="inline-block bg-white bg-opacity-20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold hover:bg-opacity-30 transition-all duration-300 shadow-lg wind-hover">
           📞 05XX XXX XX XX
         </a>
-        <p class="text-lg opacity-90">Ücretsiz keşif ve ölçüm hizmeti</p>
-        <p class="text-sm opacity-75">Kaynarca, Sakarya</p>
+        
+        <a id="footer-email" href="mailto:example@example.com" class="inline-block bg-white bg-opacity-20 backdrop-blur-sm px-6 py-3 rounded-full text-white font-semibold hover:bg-opacity-30 transition-all duration-300 shadow-lg wind-hover">
+          ✉️ example@example.com
+        </a>
+
+        <p id="footer-explanation" class="text-lg opacity-90">Ücretsiz keşif ve ölçüm hizmeti</p>
+        <p id="footer-address" class="text-sm opacity-75">Kaynarca, Sakarya</p>
       </div>
 
-      <!-- Quote Request Modal Trigger -->
-      <div id="quote-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
-          <h3 class="text-2xl font-bold mb-4 text-gray-800">Fiyat Teklifi</h3>
-          <form id="quote-form">
-            <input type="text" placeholder="Adınız Soyadınız" class="contact-input" required>
-            <input type="tel" placeholder="Telefon Numaranız" class="contact-input" required>
-            <input type="text" placeholder="Adresiniz" class="contact-input" required>
-            <textarea placeholder="Ek Notlarınız" class="contact-input h-20 resize-none"></textarea>
-            <div class="flex gap-4">
-              <button type="submit" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all flex-1">
-                Teklif Al
-              </button>
-              <button type="button" onclick="closeQuoteModal()" class="bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-500 transition-all">
-                İptal
-              </button>
-            </div>
-          </form>
-        </div>
+<div id="quote-modal">
+  <div class="modal-content">
+    <h3>Fiyat Teklifi</h3>
+    <form id="quote-form">
+      <input type="text" placeholder="Adınız Soyadınız" class="contact-input" required>
+      <input type="tel" placeholder="Telefon Numaranız" class="contact-input" required>
+      <input type="text" placeholder="Adresiniz" class="contact-input" required>
+      <textarea placeholder="Ek Notlarınız" class="contact-input" style="height: 80px; resize: none;"></textarea>
+      <div class="modal-buttons">
+        <button type="submit" class="submit-btn">Teklif Al</button>
+        <button type="button" class="cancel-btn" onclick="closeQuoteModal()">İptal</button>
       </div>
+    </form>
+  </div>
+</div>
     </div>
   </footer>
 
