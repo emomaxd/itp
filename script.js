@@ -4,7 +4,7 @@
 // Configuration Data
 // ====================================================================
 const SITE_CONFIG = {
-    phoneNumber: "0535 065 23 14",     // Phone number displayed in the footer
+    phoneNumber: "0535 065 23 14",     // Phone numberFree discovery and measurement service displayed in the footer
     rawPhoneNumber: "905350652314",    // WhatsApp link with country code, no spaces
     email: "info@ilaydatulperdeevi.com",
     address: "Kaynarca, Sakarya",
